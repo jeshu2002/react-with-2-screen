@@ -1,10 +1,19 @@
+
 .movie-details {
-    display: flex;
+  display: flex;
   align-items: stretch;
-  width: 300px;
+  width: fit-content;
+  height: fit-content;
+  max-width: 800px;
   background-color: #f5f5f5;
   border-radius: 8px;
-  overflow: hidden;
+  padding-right: 10%;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin-top: 20px;
+  overflow: visible;
+  background-color: black;
+  color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* display: flex;
     flex-direction: row;
@@ -17,9 +26,10 @@
   }
   
   .movie-title {
-    margin-top: 0;
-    font-size: 24px;
-    color: #333;
+    margin-bottom: 10px;
+    font-size: 45px;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
   .movie-image-container{
@@ -27,37 +37,52 @@
   }
   
   .movie-image {
-    width: 100%;
+    display: block;
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px 0 0 8px;
+  }
+
+  .movie-content{
+    flex: 0 0 50%;
+  padding: 16px;
+  margin: 30px;
   }
   
   .movie-summary {
     margin-bottom: 10px;
-    color: #2c2727;
     font-size: larger;
     font-style: oblique;
+    margin-bottom: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  .movie-summary-title {
-    color: #4d4b4b;
-  }
-  
-  .movie-type,
-  .movie-genres,
-  .movie-language,
-  .movie-rating,
-  .movie-status {
-    margin-bottom: 10px;
+  .movie-extra-details{
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
     color: #888;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  .movie-extra-details > p{
+    margin: 0;
+    padding: 0;
+  }
+
+  .movie-extra-details-item {
+    text-align: center;
+    margin: 5px;
+  }
+
   
   .book-tickets-btn {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #ff4081;
     color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: none;
     border-radius: 4px;
     cursor: pointer;

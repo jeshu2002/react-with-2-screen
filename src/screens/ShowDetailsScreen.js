@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchShowById } from "../services/tvMazeAPI";
 import { useParams } from "react-router-dom";
 import ShowDetails from "../components/ShowDetails";
+import "../styles/ShowDetailsScreen.css";
 
 const ShowDetailsScreen = () => {
   const [show, setShow] = useState(null);
@@ -29,7 +30,6 @@ const ShowDetailsScreen = () => {
 
   return (
     <div className="show-details-screen">
-      <h1>Show Details</h1>
       {show ? (
         <ShowDetails show={show} handleBooking={handleBooking} />
       ) : (
