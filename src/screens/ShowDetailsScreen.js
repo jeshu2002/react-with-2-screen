@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { fetchShowById } from '../services/tvMazeAPI';
-import ShowDetails from '../components/ShowDetails';
+import React, { useEffect, useState } from "react";
+import { fetchShowById } from "../services/tvMazeAPI";
+import { useParams } from "react-router-dom";
+import ShowDetails from "../components/ShowDetails";
 
-const ShowDetailsScreen = ({ match, history }) => {
+const ShowDetailsScreen = () => {
   const [show, setShow] = useState(null);
+  const match = useParams();
 
   useEffect(() => {
-    const fetchShow = async () => {
-      const { id } = match.params;
-      const data = await fetchShowById(id);
-      setShow(data);
-    };
-
-    fetchShow();
-  }, [match.params]);
+    // console.log(match);
+    try {
+      const fetchShow = async () => {
+        const id = match.id;
+        const data = await fetchShowById(id);
+        setShow(data);
+      };
+      fetchShow();
+    } catch (e) {
+      alert(e);
+    }
+  }, [match]);
 
   const handleBooking = () => {
     // Logic to handle movie ticket booking

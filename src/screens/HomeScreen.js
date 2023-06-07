@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { searchShows } from '../services/tvMazeAPI';
-import ShowList from '../components/ShowList';
+import React, { useEffect, useState } from "react";
+import { searchShows } from "../services/tvMazeAPI";
+import ShowList from "../components/ShowList";
+import { useNavigate } from "react-router-dom";
 
-const HomeScreen = ({ history }) => {
+const HomeScreen = () => {
   const [shows, setShows] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchShows = async () => {
-      const data = await searchShows('all');
+      const data = await searchShows("all");
       setShows(data);
     };
 
@@ -15,7 +17,7 @@ const HomeScreen = ({ history }) => {
   }, []);
 
   const handleShowSelect = (show) => {
-    history.push(`/shows/${show.id}`);
+    navigate(`/shows/${show.id}`);
   };
 
   return (
